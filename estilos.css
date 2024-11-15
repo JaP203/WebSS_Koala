@@ -1,0 +1,509 @@
+/* Pantalla de carga */
+#pantalla-carga {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2b1f21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#pantalla-carga p {
+  font-size: 24px;
+  color: #f19a2c;
+  margin-top: 20px;
+}
+
+/* Círculos en expansión */
+.circulo {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #f19a2c;
+  animation: expandir 1s ease-in-out infinite;
+}
+
+.circulo:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.circulo:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes expandir {
+  0%, 100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #2b1f21;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2b1f21;
+}
+
+.logo img {
+  height: 80px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #f19a2c;
+  text-decoration: none;
+  padding: 8px;
+}
+
+nav a:hover {
+  background-color: #ce3b8e;
+  border-radius: 5px;
+}
+
+.hero {
+  background-image: url('fondo-discoteca.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  position: relative;
+}
+
+.contenido-hero {
+  /* position: absolute;
+  bottom: 50px;
+  left: 50px; */
+  margin-right: 32%;
+}
+
+.contenido-hero h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #f19a2c;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f27741;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  background-color: #ce3b8e;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.eventos, .galeria-imagenes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.evento, .galeria-imagenes img {
+  width: 300px;
+}
+
+/* Tarjetas de eventos */
+.tarjetas-eventos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.tarjeta-evento {
+  background-color: #3b2e2e; /* Color distinto al fondo */
+  padding: 20px;
+  width: 300px; /* Más estrechas */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Efecto shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  color: #fff;
+}
+
+.tarjeta-evento h3 {
+  margin-top: 0;
+  color: #f19a2c;
+}
+
+.tarjeta-evento:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form input, form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #ce3b8e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #f19a2c;
+}
+
+footer {
+  background-color: #2b1f21;
+  padding: 20px;
+  text-align: center;
+}
+
+.redes-sociales img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+/* Botón flotante */
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: #f19a2c;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.boton-flotante:hover {
+  background-color: #d269d8;
+}
+
+/* Contenedor de imágenes para entradas */
+.contenedor-imagenes {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  display: flex;
+  z-index: 999;
+  overflow: hidden;
+  transition: width 1s ease;
+}
+
+.contenedor-imagenes.mostrar {
+  width: 100%;
+  left: 0;
+}
+
+.lado {
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.izquierdo {
+  background-color: #ce3b8e;
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+}
+
+.derecho {
+  background-color: #f19a2c;
+  transform: translateX(100%);
+  transition: transform 1s ease;
+}
+
+.contenedor-imagenes.mostrar .izquierdo {
+  transform: translateX(0);
+}
+
+.contenedor-imagenes.mostrar .derecho {
+  transform: translateX(0);
+}
+
+/* Scroll independiente */
+.lado::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lado::-webkit-scrollbar-thumb {
+  background-color: #f19a2c;
+  border-radius: 10px;
+}
+
+.lado::-webkit-scrollbar-track {
+  background-color: #2b1f21;
+}
+
+/* Estilos del formulario de compra */
+.formulario-compra {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2b1f21;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.formulario-compra label {
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.formulario-compra label span {
+  width: 120px;
+  text-align: left;
+}
+
+.formulario-compra input, .formulario-compra select {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  margin-top: 8px;
+}
+
+.formulario-compra button {
+  padding: 12px 20px;
+  background-color: #d269d8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.formulario-compra button:hover {
+  background-color: #b35cc0;
+}
+
+/* Tarjeta resumen de compra */
+.tarjeta-resumen {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2b1f21;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.tarjeta-resumen p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.tarjeta-resumen span {
+  float: right;
+}
+
+.tarjeta-resumen button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #d269d8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tarjeta-resumen button:hover {
+  background-color: #b35cc0;
+}
+
+
+/* Pantalla de detalle del evento */
+#detalle-evento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#detalle-evento.detalle-mostrar {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.boton-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #d269d8;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.contenedor-detalle {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #2b1f21;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.info-evento, .opciones-compra {
+  flex: 1;
+  padding: 20px;
+}
+
+.info-evento h2 {
+  color: #f19a2c;
+}
+
+.boton-cerrar:hover {
+  background-color: #b35cc0;
+}
+
+/* Estilos para el popup de aviso */
+.popup-aviso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.popup-aviso.mostrar {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.contenido-popup {
+  background-color: #2b1f21;
+  width: 30%;
+  height: 20%; /* Hacer el popup más alto */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f19a2c; /* Color destacado para el encabezado */
+  margin-bottom: 20px;
+}
+
+.contenido-popup p {
+  margin: 0 0 20px;
+  font-size: 20px; /* Tamaño de texto más grande */
+  color: #fff; /* Blanco para mayor contraste */
+}
+
+.boton-cerrar-popup {
+  padding: 10px 20px;
+  background-color: #d269d8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton-cerrar-popup:hover {
+  background-color: #b35cc0;
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sin Señal - La Mejor Discoteca de la Ciudad</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div id="popup-aviso" class="popup-aviso oculto">
+    <div class="contenido-popup">
+      <h2 class="popup-header">Aviso</h2>
+      <p>Este es un proyecto final de grado.</p>
+      <button id="cerrar-popup" class="boton-cerrar-popup">Cerrar</button>
+    </div>
+  </div>
+  
+  <!-- Pantalla de carga compleja -->
+  <div id="pantalla-carga">
+    <div class="circulo"></div>
+    <div class="circulo"></div>
+    <div class="circulo"></div>
+    <p>Cargando...</p>
+  </div>
+
+  <!-- Contenido normal de la página -->
+  <header>
+    <div class="logo">
+      <img src="logo_sin_senal.png" alt="Sin Señal">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="banner">
+    <img style="width: 100%;" src="./banner2.jpg" alt="">
+  </section>
+
+  <!-- Sección Principal -->
+  <section id="inicio" class="hero">
+    <div class="contenido-hero">
+      <h1 style="margin-left: 50%;">¡Conéctate a la mejor energía nocturna!</h1>
+      <a style="margin-left: 50%;" href="#eventos" class="boton">Próximos Eventos</a>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En Sin Señal ofrecemos una experiencia única con la mejor música y ambiente de la ciudad. Ven y descubre por qué somos el lugar preferido para disfrutar la noche.</p>
+  </section>
+
+ <!-- Eventos -->
+ <section id="eventos">
+  <h2>Próximos Eventos</h2>
+  <div class="tarjetas-eventos">
+    <div class="tarjeta-evento" data-evento="electronica">
+      <h3>Noche de Electrónica</h3>
+      <p>Fecha: 25 de Noviembre</p>
+      <p>Disfruta de una noche vibrante con los mejores DJs de música electrónica en vivo.</p>
+    </div>
+    <div class="tarjeta-evento" data-evento="disfraces">
+      <h3>Fiesta de Disfraces</h3>
+      <p>Fecha: 31 de Octubre</p>
+      <p>Prepárate para una noche mágica de disfraces y música en nuestra fiesta de Halloween.</p>
+    </div>
+    <div class="tarjeta-evento" data-evento="rock">
+      <h3>Concierto de Rock</h3>
+      <p>Fecha: 15 de Diciembre</p>
+      <p>Acompáñanos para una noche de puro rock con bandas locales e internacionales.</p>
+    </div>
+  </div>
+</section>
+<!-- Pantalla de detalle del evento -->
+<div id="detalle-evento" class="detalle-oculto">
+  <button id="cerrar-detalle" class="boton-cerrar">X</button>
+  <div class="contenedor-detalle">
+    <div class="info-evento">
+      <h2 id="titulo-evento"></h2>
+      <p id="fecha-evento"></p>
+      <p id="descripcion-evento"></p>
+    </div>
+    <div class="opciones-compra">
+      <form class="formulario-compra">
+        <h3>Compra tu entrada</h3>
+        <label>
+          <span>Nombre:</span>
+          <input type="text" name="nombre" required>
+        </label>
+        <label>
+          <span>Apellido:</span>
+          <input type="text" name="apellido" required>
+        </label>
+        <label>
+          <span>DNI:</span>
+          <input type="text" name="dni" required>
+        </label>
+        <label>
+          <span>Cantidad:</span>
+          <input type="number" name="cantidad" min="1" max="6" required>
+        </label>
+        <button type="submit">Comprar</button>
+      </form>
+    </div>
+  </div>
+</div>
+  <!-- Galería -->
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="galeria-imagenes">
+      <img src="imagen1.jpg" alt="Evento 1">
+      <img src="imagen2.jpg" alt="Evento 2">
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Dirección: Calle Principal 123, Centro de Huelva</p>
+    <p>Teléfono: +123 456 789</p>
+    <form action="#" method="post">
+      <input type="text" name="nombre" placeholder="Tu Nombre" required>
+      <input type="email" name="email" placeholder="Tu Email" required>
+      <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer>
+    <p>&copy; 2023 Sin Señal. Todos los derechos reservados.</p>
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/"><img src="Logo_Instagram.png" alt="Instagram"></a>
+      <a href="https://x.com/home?lang=es"><img src="Logo_of_Twitter.svg.png" alt="Twitter"></a>
+      <a href="https://www.facebook.com/?locale=es_ES"><img src="logo_Facebook.png" alt="Facebook"></a>
+    </div>
+  </footer>
+
+  <!-- Botón flotante -->
+  <button class="boton-flotante" id="boton-flotante">Mira nuestras entradas</button>
+
+  <!-- Contenedor para la animación -->
+  <div class="contenedor-imagenes" id="contenedor-imagenes">
+    <!-- Lado izquierdo (Entrada por 10€) -->
+    <div class="lado izquierdo">
+      <h2>Entrada Concierto Final</h2>
+      <p><strong>Precio:</strong> 10€</p>
+      <p><strong>Incluye:</strong> Entrada al acabar el concierto y una copa</p>
+      <!-- Formulario para la compra de entradas -->
+      <form class="formulario-compra">
+        <label>
+          <span>Nombre:</span>
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+          <span>Apellido:</span>
+          <input type="text" name="apellido" required>
+        </label>
+
+        <label>
+          <span>DNI:</span>
+          <input type="text" name="dni" required>
+        </label>
+
+        <label>
+          <span>Edad:</span>
+          <input type="number" name="edad" required>
+        </label>
+
+        <label>
+          <span>Método de pago:</span>
+          <select name="metodo-pago" required>
+            <option value="paypal">Paypal</option>
+            <option value="visa">Visa</option>
+            <option value="puerta">En puerta</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Cantidad de entradas:</span>
+          <input type="number" name="cantidad" min="1" required>
+        </label>
+      </form>
+
+      <!-- Tarjeta de resumen de compra (debajo del formulario) -->
+      <div class="tarjeta-resumen">
+        <h3>Resumen de la compra</h3>
+        <p>Subtotal: <span id="subtotal">0€</span></p>
+        <p>IVA (21%): <span id="iva">0€</span></p>
+        <p>Total: <span id="total">0€</span></p>
+        <label for="descuento">Código de descuento:</label>
+        <input type="text" id="descuento" placeholder="Introduce el código">
+        <button type="button" id="aplicar-descuento">Aplicar descuento</button>
+        <button type="button" id="realizar-compra">Realizar compra</button>
+      </div>
+    </div>
+
+    <!-- Lado derecho (Entrada Base por 25€) -->
+    <div class="lado derecho">
+      <h2>Entrada Base</h2>
+      <p><strong>Precio:</strong> 25€</p>
+      <p><strong>Incluye:</strong> Concierto y una copa</p>
+      <!-- Formulario para la compra de entradas -->
+      <form class="formulario-compra">
+        <label>
+          <span>Nombre:</span>
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+          <span>Apellido:</span>
+          <input type="text" name="apellido" required>
+        </label>
+
+        <label>
+          <span>DNI:</span>
+          <input type="text" name="dni" required>
+        </label>
+
+        <label>
+          <span>Edad:</span>
+          <input type="number" name="edad" required>
+        </label>
+
+        <label>
+          <span>Método de pago:</span>
+          <select name="metodo-pago" required>
+            <option value="paypal">Paypal</option>
+            <option value="visa">Visa</option>
+            <option value="puerta">En puerta</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Cantidad de entradas:</span>
+          <input type="number" name="cantidad" min="1" required>
+        </label>
+      </form>
+
+      <!-- Tarjeta de resumen de compra (debajo del formulario) -->
+      <div class="tarjeta-resumen">
+        <h3>Resumen de la compra</h3>
+        <p>Subtotal: <span id="subtotal">0€</span></p>
+        <p>IVA (21%): <span id="iva">0€</span></p>
+        <p>Total: <span id="total">0€</span></p>
+        <label for="descuento">Código de descuento:</label>
+        <input type="text" id="descuento" placeholder="Introduce el código">
+        <button type="button" id="aplicar-descuento">Aplicar descuento</button>
+        <button type="button" id="realizar-compra">Realizar compra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript para la pantalla de carga y la animación -->
+  <script>
+    window.addEventListener('load', function() {
+      const pantallaCarga = document.getElementById('pantalla-carga');
+      setTimeout(() => {
+        pantallaCarga.style.opacity = '0'; // Iniciar desvanecimiento
+        setTimeout(() => {
+          pantallaCarga.style.display = 'none'; // Ocultar pantalla de carga
+        }, 1000); // Duración del desvanecimiento
+      }, 2000); // Tiempo de carga de 5 segundos
+    });
+
+    const boton = document.getElementById('boton-flotante');
+    const contenedor = document.getElementById('contenedor-imagenes');
+    let animacionActiva = false;
+
+    boton.addEventListener('click', () => {
+      if (!animacionActiva) {
+        contenedor.classList.add('mostrar');
+        boton.textContent = 'Volver';
+        animacionActiva = true;
+      } else {
+        contenedor.classList.remove('mostrar');
+        boton.textContent = 'Mira nuestras entradas';
+        animacionActiva = false;
+      }
+    });
+
+    // Calcular el resumen de la compra
+    const realizarCompra = document.getElementById('realizar-compra');
+    const aplicarDescuento = document.getElementById('aplicar-descuento');
+    const subtotalElement = document.getElementById('subtotal');
+    const ivaElement = document.getElementById('iva');
+    const totalElement = document.getElementById('total');
+    let subtotal = 0;
+    let descuentoAplicado = 0;
+
+    function calcularResumen() {
+      let iva = subtotal * 0.21;
+      let total = subtotal + iva - descuentoAplicado;
+      subtotalElement.textContent = `${subtotal}€`;
+      ivaElement.textContent = `${iva.toFixed(2)}€`;
+      totalElement.textContent = `${total.toFixed(2)}€`;
+    }
+
+    aplicarDescuento.addEventListener('click', function() {
+      const codigoDescuento = document.getElementById('descuento').value;
+      if (codigoDescuento === 'DESCUENTO10') {
+        descuentoAplicado = subtotal * 0.10; // 10% de descuento
+      } else {
+        descuentoAplicado = 0;
+      }
+      calcularResumen();
+    });
+
+    realizarCompra.addEventListener('click', function() {
+      // Aquí iría el proceso para finalizar la compra
+      alert('Compra realizada');
+    });
+
+    // Suponiendo que se actualice el subtotal al seleccionar entradas (ejemplo básico)
+    document.querySelectorAll('.formulario-compra input[name="cantidad"]').forEach(input => {
+      input.addEventListener('change', function() {
+        const precio = this.closest('.lado').classList.contains('izquierdo') ? 10 : 25;
+        subtotal = this.value * precio;
+        calcularResumen();
+      });
+    });
+
+
+
+    const eventosData = {
+      electronica: {
+        titulo: "Noche de Electrónica",
+        fecha: "25 de Noviembre",
+        descripcion: "Disfruta de una noche vibrante con los mejores DJs de música electrónica en vivo."
+      },
+      disfraces: {
+        titulo: "Fiesta de Disfraces",
+        fecha: "31 de Octubre",
+        descripcion: "Prepárate para una noche mágica de disfraces y música en nuestra fiesta de Halloween."
+      },
+      rock: {
+        titulo: "Concierto de Rock",
+        fecha: "15 de Diciembre",
+        descripcion: "Acompáñanos para una noche de puro rock con bandas locales e internacionales."
+      }
+    };
+
+    const tarjetasEventos = document.querySelectorAll(".tarjeta-evento");
+    const detalleEvento = document.getElementById("detalle-evento");
+    const tituloEvento = document.getElementById("titulo-evento");
+    const fechaEvento = document.getElementById("fecha-evento");
+    const descripcionEvento = document.getElementById("descripcion-evento");
+    const botonCerrarDetalle = document.getElementById("cerrar-detalle");
+
+    tarjetasEventos.forEach(tarjeta => {
+      tarjeta.addEventListener("click", () => {
+        const eventoId = tarjeta.dataset.evento;
+        const eventoInfo = eventosData[eventoId];
+
+        tituloEvento.textContent = eventoInfo.titulo;
+        fechaEvento.textContent = eventoInfo.fecha;
+        descripcionEvento.textContent = eventoInfo.descripcion;
+
+        detalleEvento.classList.add("detalle-mostrar");
+      });
+    });
+
+    botonCerrarDetalle.addEventListener("click", () => {
+      detalleEvento.classList.remove("detalle-mostrar");
+    });
+
+    window.addEventListener('load', function() {
+  const popupAviso = document.getElementById('popup-aviso');
+  const cerrarPopup = document.getElementById('cerrar-popup');
+
+  // Mostrar el popup después de cargar la página
+  setTimeout(() => {
+    popupAviso.classList.add('mostrar');
+  }, 3000); // Aparece medio segundo después de cargar
+
+  // Cerrar el popup al hacer clic en el botón
+  cerrarPopup.addEventListener('click', () => {
+    popupAviso.classList.remove('mostrar');
+  });
+});
+
+  </script>
+</body>
+</html>
