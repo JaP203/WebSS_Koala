@@ -271,20 +271,31 @@
     });
 
     const boton = document.getElementById('boton-flotante');
-    const contenedor = document.getElementById('contenedor-imagenes');
-    let animacionActiva = false;
+const contenedor = document.getElementById('contenedor-imagenes');
+let animacionActiva = false;
 
-    boton.addEventListener('click', () => {
-      if (!animacionActiva) {
-        contenedor.classList.add('mostrar');
-        boton.textContent = 'Volver';
-        animacionActiva = true;
-      } else {
-        contenedor.classList.remove('mostrar');
-        boton.textContent = 'Mira nuestras entradas';
-        animacionActiva = false;
-      }
+boton.addEventListener('click', () => {
+  if (!animacionActiva) {
+    contenedor.classList.add('mostrar');
+    contenedor.classList.remove('ocultar');
+    boton.textContent = 'Volver';
+    animacionActiva = true;
+  } else {
+    contenedor.classList.add('ocultar');
+    contenedor.classList.remove('mostrar');
+    boton.textContent = 'Mira nuestras entradas';
+    animacionActiva = false;
+
+    // Restablecer clases después de la animación de salida
+    contenedor.addEventListener('transitionend', function resetClases() {
+      contenedor.classList.remove('ocultar');
+      contenedor.removeEventListener('transitionend', resetClases); // Evitar múltiples disparos
     });
+  }
+});
+
+
+
 
     // Calcular el resumen de la compra
     const realizarCompra = document.getElementById('realizar-compra');

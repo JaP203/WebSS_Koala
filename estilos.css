@@ -229,13 +229,13 @@ footer {
 .contenedor-imagenes {
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 0;
   width: 0;
   height: 100%;
   display: flex;
   z-index: 999;
   overflow: hidden;
-  transition: width 1s ease;
+  transition: width 1s ease; /* Apertura inicial */
 }
 
 .contenedor-imagenes.mostrar {
@@ -243,6 +243,21 @@ footer {
   left: 0;
 }
 
+.contenedor-imagenes.ocultar {
+  width: 100%; /* Mantén el ancho al salir */
+}
+
+.contenedor-imagenes.ocultar .izquierdo {
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out; /* Lado izquierdo sale hacia la izquierda */
+}
+
+.contenedor-imagenes.ocultar .derecho {
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out; /* Lado derecho sale hacia la derecha */
+}
+
+/* Lado izquierdo y derecho */
 .lado {
   width: 50%;
   height: 100%;
@@ -275,6 +290,7 @@ footer {
 .contenedor-imagenes.mostrar .derecho {
   transform: translateX(0);
 }
+
 
 /* Scroll independiente */
 .lado::-webkit-scrollbar {
